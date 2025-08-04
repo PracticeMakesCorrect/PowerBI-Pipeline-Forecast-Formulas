@@ -40,7 +40,9 @@ SWITCH(
 )
 
 -----------------------------
---Output example. The formula above is reponsible for the "Change Reason" column. Note that WoW Change displays $75K in the first row even though the dollar value of the opportunity didn't change. That's because once it moves into Change Reason Forecast/Won, it couunts as a positive addition to this week's forecast. 
+/*
+
+Output example. The formula above is reponsible for the "Change Reason" column. Note that WoW Change displays $75K in the first row even though the dollar value of the opportunity didn't change. That's because once it moves into Change Reason Forecast/Won, it couunts as a positive addition to this week's forecast. 
 
 | Deal ID | LW Quarter | Current Quarter | LW Stage | Stage  | LW Status       | Current Status | Client   | Program Type | LW Gross ASV | Gross ASV | WoW Change | Change Reason          |
 |---------|------------|-----------------|----------|--------|-----------------|----------------|----------|--------------|--------------|-----------|------------|------------------------|
@@ -54,3 +56,5 @@ SWITCH(
 | Deal008 | -          | Q1 2022         | -        | Stage4 | -               | Won            | Client H | Existing     | $0           | $33,000   | $33,000    | New or Pulled In to Won |
 | Deal009 | Q1 2022    | Q2 2022         | Stage5   | -      | Won             | -              | Client I | Renewal      | $50,000      | $0        | -$50,000   | Won/Forecast -> Push/Lost |
 | Deal010 | Q1 2022    | Q1 2022         | Stage4   | Stage4 | Forecast        | Forecast       | Client J | New          | $25,000      | $20,000   | -$5,000    | Deal Size Change       |
+
+*/
