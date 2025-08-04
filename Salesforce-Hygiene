@@ -1,0 +1,41 @@
+/*
+This is an approximation of the Salesforce Hygiene page in this Power BI report. 
+Field names and values are edited for confidentiality. 
+*/
+
+
+DIMENSION SLICERS
+
+Sales Team Member: Manager (Dropdown)
+Sales Team Member: Full Name (Dropdown)
+Quarter (Dropdown)
+Include/Exclude (Dropdown)
+Stage (Dropdown)
+
+HYGIENE SLICERS
+
+Stage Mismatches (Vertical List)
+[ ] Stage too high for Upside or Targeted
+[ ] Stage too low for Forecast
+
+Nurture Accounts (Vertical List)
+[ ] 30 - 60 days
+[ ] 60 - 90 days
+[ ] 90+ days
+
+Stale Next Steps (Vertical List)
+[ ] > 14 days
+[ ] 7 - 14 days
+
+Stale Deals (Vertical List)
+[ ] Show me
+
+MAIN TABLE
+
+DR      | Stage        | Region     | Adjusted Stage Duration | Account Name | FLM       | Rep     | Fiscal Month | Week | Close Date | Licensing Program Type | Gross ASV | ARR      | Next Steps
+--------|--------------|------------|-------------------------|--------------|-----------|---------|--------------|------|------------|------------------------|-----------|----------|------------
+DR1001  | 05 - Forecast| Commitment | 15                      | Acme Corp    | Jane Doe  | John S  | M1           | WK2  | 2025-09-15 | New                    | $150,000  | $0       | Review on 2025-09-10
+DR1002  | 04 - Forecast| Forecast   | 35                      | Beta Inc     | Tom Lee   | Mary K  | M2           | WK3  | 2025-10-01 | Renewal                | $300,000  | $250,000 | Call on 2025-09-20
+DR1003  | 03 - Forecast| Commitment | 22                      | Gamma Ltd    | Jane Doe  | Peter R | M1           | WK4  | 2025-09-25 | Add On                 | $75,000   | $60,000  | Email on 2025-09-18
+Total   |              |            |                         |              |           |         |              |      |            |                        | $525,000  | $310,000 |
+
