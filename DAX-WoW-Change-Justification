@@ -40,7 +40,7 @@ SWITCH(
 )
 
 -----------------------------
---Output example. The formula above is reponsible for the "Change Reason" column. Note that WoW Change displays $53K in the first row even though the dollar value of the opportunity didn't change. That's because once it moves into Forecast/Won, it couunts as a positive addition to this week's forecast. 
+--Output example. The formula above is reponsible for the "Change Reason" column. Note that WoW Change displays $75K in the first row even though the dollar value of the opportunity didn't change. That's because once it moves into Change Reason Forecast/Won, it couunts as a positive addition to this week's forecast. 
 
 | Deal ID | LW Quarter | Current Quarter | LW Stage | Stage  | LW Status       | Current Status | Client   | Program Type | LW Gross ASV | Gross ASV | WoW Change | Change Reason          |
 |---------|------------|-----------------|----------|--------|-----------------|----------------|----------|--------------|--------------|-----------|------------|------------------------|
