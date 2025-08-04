@@ -39,3 +39,18 @@ SWITCH(
     BLANK()
 )
 
+-----------------------------
+--Output example. The formula above is reponsible for the "Change Reason" column. Note that WoW Change displays $53K in the first row even though the dollar value of the opportunity didn't change. That's because once it moves into Forecast/Won, it couunts as a positive addition to this week's forecast. 
+
+| Deal ID | LW Quarter | Current Quarter | LW Stage | Stage  | LW Status       | Current Status | Client   | Program Type | LW Gross ASV | Gross ASV | WoW Change | Change Reason          |
+|---------|------------|-----------------|----------|--------|-----------------|----------------|----------|--------------|--------------|-----------|------------|------------------------|
+| Deal001 | Q1 2022    | Q1 2022         | Stage1   | Stage2 | Upside          | Forecast       | Client A | Partial      | $75,000      | $75,000   | $75,000    | Upside/UT -> Forecast/Won |
+| Deal002 | Q1 2022    | Q1 2022         | Stage2   | Stage2 | Upside - Targeted | Forecast     | Client B | Migrated     | $48,000      | $48,000   | $48,000    | Upside/UT -> Forecast/Won |
+| Deal003 | Q1 2022    | Q1 2022         | Stage1   | Stage1 | Forecast        | Forecast       | Client C | New          | $220,000     | $280,000  | $60,000    | Deal Size Change       |
+| Deal004 | Q1 2022    | Q1 2022         | Stage3   | Stage3 | Forecast        | Forecast       | Client D | True-up      | $130,000     | $170,000  | $40,000    | Deal Size Change       |
+| Deal005 | -          | Q1 2022         | -        | Stage2 | -               | Forecast       | Client E | True-up      | $0           | $62,000   | $62,000    | New or Pulled In to Forecast |
+| Deal006 | Q1 2022    | Q2 2022         | Stage3   | -      | Forecast        | -              | Client F | New          | $85,000      | $0        | -$85,000   | Won/Forecast -> Push/Lost |
+| Deal007 | Q1 2022    | Q1 2022         | Stage2   | Stage2 | Forecast        | Upside         | Client G | Renewal      | $300,000     | $300,000  | -$300,000  | Forecast -> Upside/UT  |
+| Deal008 | -          | Q1 2022         | -        | Stage4 | -               | Won            | Client H | Existing     | $0           | $33,000   | $33,000    | New or Pulled In to Won |
+| Deal009 | Q1 2022    | Q2 2022         | Stage5   | -      | Won             | -              | Client I | Renewal      | $50,000      | $0        | -$50,000   | Won/Forecast -> Push/Lost |
+| Deal010 | Q1 2022    | Q1 2022         | Stage4   | Stage4 | Forecast        | Forecast       | Client J | New          | $25,000      | $20,000   | -$5,000    | Deal Size Change       |
