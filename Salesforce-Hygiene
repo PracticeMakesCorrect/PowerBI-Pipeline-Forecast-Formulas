@@ -3,15 +3,6 @@ This is an approximation of the Salesforce Hygiene page in this Power BI report.
 Field names and values are edited for confidentiality. 
 */
 
-
-DIMENSION SLICERS
-
-Sales Team Member: Manager (Dropdown)
-Sales Team Member: Full Name (Dropdown)
-Quarter (Dropdown)
-Include/Exclude (Dropdown)
-Stage (Dropdown)
-
 HYGIENE SLICERS
 
 Stage Mismatches (Vertical List)
