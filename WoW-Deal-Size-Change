@@ -1,5 +1,5 @@
 /*
-This formula tells the user what the Week Over Week (WoW) change for each deal has been. 
+This DAX formula tells the user what the Week Over Week (WoW) change for each deal has been. 
 For example, if Business XYZ had a dollar value of $283,112 last week and this week it has a dollar value of $321,112, then it will display $38,000. 
 By using conditional formatting in Power BI one can make it easy for the user to see whether it's a negative, neutral, or positive change.
 Formula fields and values have been edited to preserve Adobe's confidentiality. 
