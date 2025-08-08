@@ -5,21 +5,10 @@ Field names and values are edited for confidentiality.
 
 HYGIENE SLICERS
 
-Stage Mismatches (Vertical List)
-[ ] Stage too high for Upside or Targeted
-[ ] Stage too low for Forecast
-
-Nurture Accounts (Vertical List)
-[ ] 30 - 60 days
-[ ] 60 - 90 days
-[ ] 90+ days
-
-Stale Next Steps (Vertical List)
-[ ] > 14 days
-[ ] 7 - 14 days
-
-Stale Deals (Vertical List)
-[ ] Show me
+ Stage Mismatches                     Nurture Accounts     Stale Next Steps     Stale Deals   
+ [ ] Stage too high for Upside        [ ] 30 - 60 days     [ ] > 14 days        [ ] Show me   
+ [ ] Stage too low for Forecast       [ ] 60 - 90 days     [ ] 7 - 14 days                    
+                                      [ ] 90+ days                                                                           
 
 MAIN TABLE
 
