@@ -44,6 +44,7 @@ SWITCH(
 
 
 OUTPUT EXAMPLE BY DEAL ID
+
 Note: the formula above is reponsible for the "Change Reason" column. Also, WoW Change displays $75K in the first row even though the dollar value of the opportunity didn't change. That's because once it moves into Change Reason Forecast/Won, it couunts as a positive addition to this week's forecast. 
 
 ![My Image](images/ByDeal.PNG)
