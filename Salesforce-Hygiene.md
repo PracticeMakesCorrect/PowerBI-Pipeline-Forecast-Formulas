@@ -1,7 +1,6 @@
-/*
 This is an approximation of the Salesforce Hygiene page in this Power BI report. 
 Field names and values are edited for confidentiality. 
-*/
+
 
 HYGIENE SLICERS
 
