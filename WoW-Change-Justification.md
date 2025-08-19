@@ -8,33 +8,33 @@ By using conditional formatting in Power BI one can make it easy for the user to
 Metric_Change_Justification = 
 SWITCH(
     TRUE(),
-    -- Moved Out (Active or Likely to Inactive/Lost/Excluded)
-    (Prev_Status IN {"Active", "Likely"}) && 
+    -- Moved Out (Forecast/Won to Push/Lost)
+    (Prev_Status IN {"Forecast", "Won"}) && 
     (Is_Shifted_Out || ISBLANK(Category) || Exclusion_Flag <> 0),
-    "Active/Likely -> Inactive",
+    "Won/Forecast -> Push/Lost",
 
-    -- Moved Out but Not in Active/Likely
+    -- Moved Out but Not in Forecast/Won
     Is_Shifted_Out,
     "Shifted Out",
 
-    -- New or Moved In to Active/Likely
-    (Is_New || Is_Shifted_In) && Curr_Status IN {"Active", "Likely"},
-    "New or Moved to Active",
+    -- New or Moved In to Forecast/Won
+    (Is_New || Is_Shifted_In) && Curr_Status IN {"Forecast", "Won"},
+    IF(Curr_Status = "Forecast", "New or Pulled In to Forecast", "New or Pulled In to Won"),
 
-    -- Status Upgrade (Low-Priority to Active/Likely)
-    Prev_Status IN {"Low-Priority", "Low-Priority-Tracked"} && 
-    Curr_Status IN {"Active", "Likely"},
-    "Low-Priority to Active",
+    -- Status Upgrade (Upside/UT to Forecast/Won)
+    Prev_Status = "Upside/UT" && 
+    Curr_Status IN {"Forecast", "Won"},
+    "Upside/UT -> Forecast/Won",
 
-    -- Status Downgrade (Active to Low-Priority)
-    Prev_Status = "Active" && 
-    Curr_Status IN {"Low-Priority", "Low-Priority-Tracked"},
-    "Active to Low-Priority",
+    -- Status Downgrade (Forecast to Upside/UT)
+    Prev_Status IN {"Forecast"} && 
+    Curr_Status = "Upside/UT",
+    "Forecast -> Upside/UT",
 
     -- Value Change in Same Period
     Same_Period && Value_Difference <> 0 && 
-    Curr_Status IN {"Active", "Likely"},
-    "Value Adjustment",
+    Curr_Status IN {"Forecast", "Won", "Upside/UT"},
+    "Deal Size Change",
 
     BLANK()
 )
