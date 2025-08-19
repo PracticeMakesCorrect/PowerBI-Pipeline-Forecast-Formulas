@@ -56,38 +56,17 @@ OUTPUT EXAMPLE BY DEAL ID
 
 The formula above is reponsible for the "WoW Change" column. Note that WoW Change displays $75K in the first row even though the dollar value of the opportunity didn't change. That's because once it moves into Change Reason Forecast/Won, it couunts as a positive addition to this week's forecast. 
 
-| Deal ID | Current Quarter | Stage  | Current Status | Client   | LW Gross ASV | Gross ASV | WoW Change | Change Reason                |
-|---------|-----------------|--------|----------------|----------|--------------|-----------|------------|------------------------------|
-| Deal001 | Q1 2022         | Stage2 | Forecast       | Client A | $75,000      | $75,000   | $75,000    | Upside/UT -> Forecast/Won    |
-| Deal002 | Q1 2022         | Stage2 | Forecast       | Client B | $48,000      | $48,000   | $48,000    | Upside/UT -> Forecast/Won    |
-| Deal003 | Q1 2022         | Stage1 | Forecast       | Client C | $220,000     | $280,000  | $60,000    | Deal Size Change             |
-| Deal004 | Q1 2022         | Stage3 | Forecast       | Client D | $130,000     | $170,000  | $40,000    | Deal Size Change             |
-| Deal005 | Q1 2022         | Stage2 | Forecast       | Client E | $0           | $62,000   | $62,000    | New or Pulled In to Forecast |
-| Deal006 | Q2 2022         | -      | -              | Client F | $85,000      | $0        | -$85,000   | Won/Forecast -> Push/Lost    |
-| Deal007 | Q1 2022         | Stage2 | Upside         | Client G | $300,000     | $300,000  | -$300,000  | Forecast -> Upside/UT        |
-| Deal008 | Q1 2022         | Stage4 | Won            | Client H | $0           | $33,000   | $33,000    | New or Pulled In to Won      |
-| Deal009 | Q2 2022         | -      | -              | Client I | $50,000      | $0        | -$50,000   | Won/Forecast -> Push/Lost    |
-| Deal010 | Q1 2022         | Stage4 | Forecast       | Client J | $25,000      | $20,000   | -$5,000    | Deal Size Change             |
 
-OUTPUT EXAMPLE BY PRODUCT
+![My Image](images/ByDeal.PNG)
 
-Solution Category | Previous ASV | Current ASV | Month Change
-------------------|--------------|-------------|-------------
-Category A        | $10,000,000  | $9,500,000  | ($500,000)
-Category B        | $4,000,000   | $5,200,000  | $1,200,000
-Category C        | $11,000,000  | $10,500,000 | ($500,000)
-Category D        | $3,500,000   | $4,700,000  | $1,200,000
-Total             | $28,500,000  | $29,900,000 | $1,400,000
+
+OUTPUT EXAMPLE BY SOLUTION
+
+
+![My Image](images/BySolution.PNG)
+
 
 OUTPUT EXAMPLE BY FRONT LINE MANAGER
 
-By FLM | WoW Change
--------|------------
-Name A | ($120,000)
-Name B | $90,000
-Name C | ($80,000)
-Name D | $150,000
-Name E | ($60,000)
-Name F | $200,000
-Name G | ($300,000)
-Total  | $1,280,000
+
+![My Image](images/ByFLM.PNG)
