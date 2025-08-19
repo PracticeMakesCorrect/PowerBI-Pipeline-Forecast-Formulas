@@ -1,8 +1,10 @@
-/*
 This DAX formula tells the user what the Week Over Week (WoW) change for each deal has been. 
 For example, if Business XYZ had a dollar value of $283,112 last week and this week it has a dollar value of $321,112, then it will display $38,000. 
 By using conditional formatting in Power BI one can make it easy for the user to see whether it's a negative, neutral, or positive change.
-*/
+
+
+
+```dax
 
 Metric_Change = 
 SUMX(
@@ -17,36 +19,38 @@ SUMX(
     RETURN
     SWITCH(
         TRUE(),
-        -- Deals Moved Out (Active or Likely to Inactive/Lost/Excluded) (-)
-        (Prev_Status IN {"Active", "Likely"}) && 
+        -- Deals Moved Out (Forecast/Won to Push/Lost) (-)
+        (Prev_Status IN {"Forecast", "Won"}) && 
         (Is_Shifted_Out || ISBLANK('Data_Table'[Category]) || 'Data_Table'[Exclusion_Flag] <> 0),
         -[Previous_Value],
 
-        -- New or Shifted-In Deals to Active or Likely (+)
-        (Is_New || Is_Shifted_In) && Curr_Status IN {"Active", "Likely"},
+        -- New or Shifted-In Deals to Forecast/Won (+)
+        (Is_New || Is_Shifted_In) && Curr_Status IN {"Forecast", "Won"},
+        IF(Curr_Status = "Forecast", [Current_Value], IF(Curr_Status = "Won", [Current_Value], BLANK())),
+
+        -- Status Changes: Upside/UT to Forecast/Won (+)
+        Prev_Status = "Upside/UT" && 
+        Curr_Status IN {"Forecast", "Won"},
         [Current_Value],
 
-        -- Status Changes: Low-Priority to Active/Likely (+)
-        Prev_Status IN {"Low-Priority", "Low-Priority-Tracked"} && 
-        Curr_Status IN {"Active", "Likely"},
-        [Current_Value],
-
-        -- Status Changes: Active to Low-Priority (-)
-        Prev_Status = "Active" && 
-        Curr_Status IN {"Low-Priority", "Low-Priority-Tracked"},
+        -- Status Changes: Forecast to Upside/UT (-)
+        Prev_Status = "Forecast" && 
+        Curr_Status = "Upside/UT",
         -[Previous_Value],
 
         -- Value Changes in Same Period (+ or -)
         Same_Period && Value_Change <> 0 && 
-        Curr_Status IN {"Active", "Likely"},
+        Curr_Status IN {"Forecast", "Won", "Upside/UT"},
         Value_Change,
 
         BLANK()
     )
 )
 
------------------------------
-/*
+
+```
+
+
 
 OUTPUT EXAMPLE BY DEAL ID
 
@@ -87,5 +91,3 @@ Name E | ($60,000)
 Name F | $200,000
 Name G | ($300,000)
 Total  | $1,280,000
-
-*/
